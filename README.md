@@ -1,12 +1,12 @@
 # socialMediaApp-project-3
 
-AbdulKareem Ibrahim
+// AbdulKareem Ibrahim
 
-Emily Johnson
+// Emily Johnson
 
-Jared Stearne
+// Jared Stearne
 
-Jonathan Flores
+// Jonathan Flores
 
 
 User Research Questions:
