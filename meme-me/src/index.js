@@ -1,14 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Nav from "./components/Nav";
+import Welcome from './App';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 
+// Welcome is temporary sanity check component
 ReactDOM.render(
     <React.StrictMode>
       <Router>
-        <Nav />
+        <Welcome />
       </Router>
     </React.StrictMode>,
     document.getElementById("root")
