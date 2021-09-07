@@ -1,10 +1,11 @@
-require("dotenv").config();
+require('dotenv').config();
+require('./models/index');
 
 /* ==== External Modules ==== */
-const express = require("express");
+const express = require('express');
 
 /* ==== Instanced Modules  ==== */
-const app = express(); 
+const app = express();
 
 /* ====  Configuration  ==== */
 const PORT = process.env.PORT || 5000;
@@ -12,5 +13,5 @@ const PORT = process.env.PORT || 5000;
 /* ===== Server Listener ===== */
 
 app.listen(PORT, () => {
-    console.log(`server started on port:${PORT}`);
+  console.log(`server started on port:${PORT}`);
 });
