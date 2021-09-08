@@ -9,7 +9,7 @@ function Welcome() {
   return (
     // Make sure to return some UI
     <div>
-      <h1>Welcome to Meme-ification!</h1>
+      <h1>Welcome to Memeify!</h1>
       <Likes />
       <Dislikes />
     </div>
