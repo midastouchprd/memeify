@@ -1,52 +1,70 @@
-# socialMediaApp-project-3
+# Getting Started with Create React App
 
-// AbdulKareem Ibrahim
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-// Emily Johnson
+## Available Scripts
 
-// Jared Stearne
+In the project directory, you can run:
 
-// Jonathan Flores
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-User Research Questions:
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-1. Would you prefer a rated meme (1-10) (1-5) or a like button?  
+### `npm test`
 
-	A. Rated (1-10) only
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-	B. Rated (1-5) only
+### `npm run build`
 
-	C. Like button only
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-2. Would you like to have a dislike button?
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-	Yes
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-	No
+### `npm run eject`
 
-3. Would you prefer the comments that other users leave to be the meme or would you prefer the meme to be generated for you OR the option to use either the user comments left under your posted image or what is automatically generated for you?
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-	A. Generator only
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-	B. Comments left by other users only
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-	C. Option to use either one
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-4. Would you prefer comments of your posted image on the same page or a different page?
+## Learn More
 
-	A. Same
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-	B. Separate page
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-5. What names do you like best?  (name of our app)
+### Code Splitting
 
-	A. Memegram
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-	B. Meme-o-gram
-	
-	C. Memeify
+### Analyzing the Bundle Size
 
-	D. Meme-ification
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
+### Making a Progressive Web App
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
