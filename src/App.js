@@ -17,8 +17,8 @@ import './App.css';
     // Make sure to return some UI
 //     <div>
 //       <h1>Welcome to Memeify!</h1>
-//       <Likes />
-//       <Dislikes />
+//       <LikeTwoTone />
+//       <DislikeTwoTone />
 //     </div>
     
 //   );

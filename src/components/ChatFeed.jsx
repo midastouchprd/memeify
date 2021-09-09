@@ -1,5 +1,5 @@
 import MyMessage from './MyMessage';
-import OthersMessage from './TheirMessage';
+import TheirMessage from './TheirMessage';
 import MessageForm from './MessageForm';
 
 const ChatFeed = (props) => {
@@ -59,5 +59,6 @@ const ChatFeed = (props) => {
     </div>
   );
 };
+
 
 export default ChatFeed;
