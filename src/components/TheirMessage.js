@@ -1,5 +1,5 @@
-const OthersMessage = ({ lastMessage, message }) => {
-  const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
+const TheirMessage = ({ lastMessage, message }) => {
+const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
 
   return (
     <div className="message-row">
@@ -27,4 +27,4 @@ const OthersMessage = ({ lastMessage, message }) => {
   );
 };
 
-export default OthersMessage;
+export default TheirMessage;
