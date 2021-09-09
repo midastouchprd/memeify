@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const db = mongoose.connection;
 const configs = {
   useNewUrlParser: true,
@@ -13,5 +14,5 @@ db.once('open', () => {
 });
 
 // module.exports = {
-//   //    User: require("./User"),
+//   User: require('./user'),
 // };
