@@ -13,6 +13,7 @@ db.once('open', () => {
   console.log('Connected to the Meme Cloud');
 });
 
-// module.exports = {
-//   User: require('./user'),
-// };
+module.exports = {
+  User: require('./user'),
+  Post: require('./MemePost')
+};
