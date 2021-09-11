@@ -1,0 +1,76 @@
+.signIn-h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.signIn-form {
+  position: absolute;
+
+  left: 529px;
+  top: 162px;
+
+  width: 622px;
+  height: 439px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+
+.signIn-h3 {
+  position: absolute;
+  width: 558px;
+  height: 36px;
+  left: 93px;
+  top: 66px;
+
+  /* Body H4 */
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: -0.015em;
+
+  color: #000000;
+  border-radius: 0.5rem;
+}
+
+.signIn-email {
+  position: absolute;
+  width: 494px;
+  height: 40px;
+  left: 93px;
+  top: 145px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+
+.signIn-password {
+  position: absolute;
+  width: 494px;
+  height: 40px;
+  left: 93px;
+  top: 200px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+
+.signIn-button {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  left: 93px;
+  top: 255px;
+  border-radius: 0.5rem;
+}
