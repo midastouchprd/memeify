@@ -1,6 +1,6 @@
 // Controllers Index
 module.exports = {
   users: require('./users'),
-  //   posts: require('./posts'),
+  posts: require('./MemePost'),
   auth: require('./auth'),
 };
