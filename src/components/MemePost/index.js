@@ -1,6 +1,8 @@
 // Post component
 
+//NOTES:
 //need to check type for edit img text? blob? see line 59
+//check all comments to match up with Jonathon Flores comments work
 
 import React, { useState, useEffect } from "react";
 import Likes from "../Likes";
@@ -56,7 +58,7 @@ return (
               <input
                   onChange={(e) => setTitle(e.target.value)}
                   value={editedImg}
-                  type="text"  // blob?
+                  type="text"  // blob?***************************************************
                   name="img"
                   placeholder="Image goes here"
               />
@@ -82,7 +84,7 @@ return (
                 {!isEditing && <p className="post-caption">{caption}</p>}
                 {isEditing && (
                     <input
-                        onChange={(e) => setBody(e.target.value)}
+                        onChange={(e) => setcaption(e.target.value)}
                         value={editedCaption}
                         type="text"
                         name="caption"
@@ -90,5 +92,33 @@ return (
                     />
                 )}
             </div>
+            <div className="likes">
+                <Likes />
+            </div>
+            <div className="dislike">
+                <Dislike />
+            </div>
+            <div>
+                <h3>Comments:</h3>
+                {comments.map((comment) => {
+                    return (
+                        <Comment
+                            author={comment.author}
+                            caption={comment.caption}
+                            key={comment._id}
+                            commentId={comment._id}
+                            id={id}
+                            getCommentsAgain={(id) => fetchComments(id)}
+                        />
+                    );
+                })}
+            </div>
+            <CommentForm
+                id={id}
+                getPostsAgain={() => getPostsAgain()}
+                getCommentsAgain={(id) => fetchComments(id)}
+            />
+        </div>
+    );
 
 }
