@@ -3,6 +3,7 @@ import React from 'react';
 import Dislikes from './components/Dislike';
 import Likes from './components/Likes';
 import Nav from './components/Nav';
+import User from './components/User';
 
 // define our Welcome functional component
 function Welcome() {
@@ -11,6 +12,7 @@ function Welcome() {
     // Make sure to return some UI
     <div>
       <Nav />
+      <User />
       {/* <h1>Welcome to Meme-ification!</h1>
       <Likes />
       <Dislikes /> */}
