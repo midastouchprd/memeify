@@ -1,6 +1,8 @@
 .signIn-h1 {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+
+  left: 529px;
+  top: 80px;
 }
 
 .signIn-form {

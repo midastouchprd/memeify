@@ -5,6 +5,7 @@ import * as UserService from '../../api/UserService';
 import { setToken } from '../../utils/tokenservice';
 
 const Register = () => {
+  const history = useHistory();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -20,6 +21,21 @@ const Register = () => {
 
     const res = await UserService.create(newMemifyUser);
     console.log(res);
+    //trying to extract a token
+    if (res.data.data) {
+      if (res.data.data.token) {
+        const token = res.data.data.token;
+        setToken(token);
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPassword('');
+        //redirect to home
+        history.push('/');
+      }
+    } else {
+      alert('Server Error');
+    }
   };
 
   return (
