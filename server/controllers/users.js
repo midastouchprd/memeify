@@ -1,19 +1,22 @@
 // Users controller
 
-//const db = require('../models');
-const User = require('../models/User');
+const db = require('../models');
+//const User = require('../models/User');
 //const createJWT = require('./helpers');
+const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
 // Index - GET - Presentational (all of one resource)
 const index = async (req, res) => {
-  const users = await User.find({});
+  const users = await db.User.find({});
+  console.log('users');
   console.log(users);
   res.json(users);
 };
 
 const create = (req, res) => {
-  User.create(req.body, (err, savedUser) => {
+  console.log('body');
+  db.User.create(req.body, (err, savedUser) => {
     if (err) return console.log('Error in User#create:', err);
 
     const token = createJWT(savedUser);

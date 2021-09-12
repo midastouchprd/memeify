@@ -2,6 +2,7 @@
 import React from 'react';
 import Dislikes from './components/Dislike';
 import Likes from './components/Likes';
+import Nav from './components/Nav';
 
 // define our Welcome functional component
 function Welcome() {
@@ -9,11 +10,11 @@ function Welcome() {
   return (
     // Make sure to return some UI
     <div>
-      <h1>Welcome to Meme-ification!</h1>
+      <Nav />
+      {/* <h1>Welcome to Meme-ification!</h1>
       <Likes />
-      <Dislikes />
+      <Dislikes /> */}
     </div>
-    
   );
 }
 
