@@ -33,6 +33,8 @@ const User = () => {
       setNewAuthor({...newUser, photo: e.target.files[0]});
   }
 
+
+  //photo can only be a png, jpg, or jpeg
   return (
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
           <input 
