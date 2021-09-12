@@ -41,7 +41,6 @@ const User = () => {
               name="photo"
               onChange={handlePhoto}
           />
-
           <input 
               type="text"
               placeholder="name"
