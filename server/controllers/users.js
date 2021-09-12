@@ -8,11 +8,13 @@ const SECRET = process.env.SECRET;
 // Index - GET - Presentational (all of one resource)
 const index = async (req, res) => {
   const users = await User.find({});
+  console.log('users');
   console.log(users);
   res.json(users);
 };
 
 const create = (req, res) => {
+  console.log('body');
   User.create(req.body, (err, savedUser) => {
     if (err) return console.log('Error in User#create:', err);
 
