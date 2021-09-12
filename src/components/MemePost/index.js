@@ -13,7 +13,7 @@ import "./styles.css";
 // import Comment from "../Comment";
 // import CommentForm from "../CommentForm";
 
-function Post({ id, getPostsAgain, img, author, caption, postComments }) {
+function MemePost({ id, getPostsAgain, img, author, caption, postComments }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedImg, setImg] = useState(img);
   const [editedAuthor, setAuthor] = useState(author);
@@ -122,3 +122,18 @@ return (
     );
 
 }
+
+MemePost.propTypes = {
+  id: string.isRequired,
+  img: string.isRequired,
+  author: string.isRequired,
+  caption: string.isRequired,
+  postComments: array,
+  getPostsAgain: func,
+};
+
+MemePost.defaultProps = {
+  author: "Memeify Me",
+};
+
+export default MemePost;
