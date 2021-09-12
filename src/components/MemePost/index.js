@@ -1,7 +1,6 @@
-// Post component
-
 //NOTES:
-//need to check type for edit img text? blob? see line 59
+//need to check type for edit img text? blob? 
+//use caption or content?
 //check all comments to match up with Jonathon Flores comments work
 
 import React, { useState, useEffect } from "react";
@@ -17,7 +16,7 @@ function MemePost({ id, getPostsAgain, img, author, caption, postComments }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedImg, setImg] = useState(img);
   const [editedAuthor, setAuthor] = useState(author);
-  const [editedCaption, setCaption] = useState(caption);
+  const [editedCaption, setCaption] = useState(caption); //caption or content? *************
   const [comments, setComments] = useState([]);
 
   const handleEdit = async () => {
@@ -27,7 +26,7 @@ function MemePost({ id, getPostsAgain, img, author, caption, postComments }) {
         let editedPost = {
             img: editedImg,
             author: editedAuthor,
-            caption: editedCaption,
+            caption: editedCaption, //caption or content? *********************
         };
         await MemePostService.update(id, editedPost);
         getPostsAgain();
@@ -56,7 +55,7 @@ return (
           {!isEditing && <h1>{img}</h1>}
           {isEditing && (
               <input
-                  onChange={(e) => setTitle(e.target.value)}
+                  onChange={(e) => setImg(e.target.value)}
                   value={editedImg}
                   type="text"  // blob?***************************************************
                   name="img"
@@ -65,9 +64,9 @@ return (
           )}
           <div>
                     <button onClick={handleEdit}>
-                        {isEditing ? "SUBMIT" : "EDIT"}
+                        {isEditing ? "Submit" : "Edit"}
                     </button>
-                    <button onClick={handleDelete}>DELETE</button>
+                    <button onClick={handleDelete}> Delete </button>
                 </div>
             </div>
             {!isEditing && <p>By: {author}</p>}
@@ -80,12 +79,13 @@ return (
                     placeholder="User Name"
                 />
             )}
-            <div>
-                {!isEditing && <p className="post-caption">{caption}</p>}
+    
+            <div> 
+                {!isEditing && <p className="post-caption">{caption}</p>} 
                 {isEditing && (
                     <input
                         onChange={(e) => setcaption(e.target.value)}
-                        value={editedCaption}
+                        value={editedCaption} // caption or content? *************
                         type="text"
                         name="caption"
                         placeholder="Caption"
@@ -104,7 +104,7 @@ return (
                     return (
                         <Comment
                             author={comment.author}
-                            caption={comment.caption}
+                            caption={comment.caption} // caption or content? *************
                             key={comment._id}
                             commentId={comment._id}
                             id={id}
@@ -127,7 +127,7 @@ MemePost.propTypes = {
   id: string.isRequired,
   img: string.isRequired,
   author: string.isRequired,
-  caption: string.isRequired,
+  caption: string.isRequired, // caption or content? ************
   postComments: array,
   getPostsAgain: func,
 };
