@@ -1,39 +1,39 @@
 import tellMemeifyto from "./tellMemeifyto";
 
 const getAll = () => {
-    return tellMemeifyto.get("/posts");
+    return tellMemeifyto.get("/memeposts");
 };
 
 const get = (id) => {
-    return tellMemeifyto.get(`/posts/${id}`);
+    return tellMemeifyto.get(`/memeposts/${id}`);
 };
 
 const getAllComments = (id) => {
-    return tellMemeifyto.get(`/posts/${id}/comments`);
+    return tellMemeifyto.get(`/memeposts/${id}/comments`);
 }
 
 const create = (data) => {
-    return tellMemeifyto.post("/posts", data);
+    return tellMemeifyto.post("/memeposts", data);
 };
 
 const createComment = (id, data) => {
-    return tellMemeifyto.post(`/posts/${id}/comment`, data);
+    return tellMemeifyto.post(`/memeposts/${id}/comment`, data);
 }
 
 const update = (id, data) => {
-    return tellMemeifyto.put(`/posts/${id}`, data);
+    return tellMemeifyto.put(`/memeposts/${id}`, data);
 };
 
 const updateComment = (id, commentId, data) => {
-    return tellMemeifyto.put(`/posts/${id}/comment/${commentId}`, data);
+    return tellMemeifyto.put(`/memeposts/${id}/comment/${commentId}`, data);
 }
 
 const remove = (id) => {
-    return tellMemeifyto.delete(`/posts/${id}`);
+    return tellMemeifyto.delete(`/memeposts/${id}`);
 };
 
 const removeComment = (id, commentId) => {
-    return tellMemeifyto.delete(`/posts/${id}/comment/${commentId}`);
+    return tellMemeifyto.delete(`/memeposts/${id}/comment/${commentId}`);
 }
 
 // You can only export default when there's one thing to export
