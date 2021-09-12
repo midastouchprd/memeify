@@ -1,7 +1,7 @@
-const User = require('../models/User');
+//const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
-//const db = require('../models');
+const db = require('../models');
 const bcrypt = require('bcrypt');
 //const createJWT = require('./helpers');
 
@@ -9,7 +9,7 @@ const login = async (req, res) => {
   console.log('login controller');
   const { email, password } = req.body;
   // look for user via email
-  let foundUser = await User.findOne({ email });
+  let foundUser = await db.User.findOne({ email });
 
   //if we don't find anyone send a 404 and a message so front end knows what to do
   if (!foundUser) {
