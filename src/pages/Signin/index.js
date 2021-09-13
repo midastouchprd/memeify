@@ -46,7 +46,8 @@ const Signin = () => {
         />
         <input
           className="signIn-password"
-          placeholder="Create Password"
+          placeholder="Password"
+          type='password'
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
