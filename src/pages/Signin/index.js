@@ -27,7 +27,7 @@ const Signin = () => {
       setToken(token);
       setEmail('');
       setPassword('');
-      history.push('/');
+      history.push('/profile');
     } else {
       alert('Server Error enter valid creds');
     }
