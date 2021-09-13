@@ -11,8 +11,8 @@ const commentSchema = new mongoose.Schema(
 
 const memePostSchema = new mongoose.Schema(
   {
-    img: { type: Buffer, contentType: String },
     author: { type: Schema.Types.ObjectId, ref: 'User' },
+    memeImage: { type: String, required: true },
     caption: { type: String },
     comments: [commentSchema],
     date: { type: Date, default: Date.now },
