@@ -7,7 +7,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { func } from "prop-types";
-import * as MemePostService from "../../api/MemePostService";
+import * as MemePostService from "../../api/PostService";
 
 const MemePostForm = ({ getPostsAgain, user }) => {
   const [img, setImg] = useState("");
