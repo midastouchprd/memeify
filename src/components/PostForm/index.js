@@ -15,7 +15,7 @@ const PostForm = () => {
   const [fileName, setFileName] = useState("");
 
   const onChangeFile = (e) => {
-    setFileName(e.target.file[0]);
+    setFileName(e.target.files[0]);
   }
 
   const changeOnClick = (e) => {
@@ -71,7 +71,7 @@ const PostForm = () => {
           type="file" 
           filename="postImage" 
           className="form-control-file"
-          // accept="image/*" 
+          accept="image/*" 
           onChange={onChangeFile}
           />
         </div>
