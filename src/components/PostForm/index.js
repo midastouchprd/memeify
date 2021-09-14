@@ -1,24 +1,24 @@
 //NOTES:
-//check to see img is string? 
-//check input type for img. Use blob? 
+//check to see memeImage is string? 
+//check input type for memeImage. Use blob? 
 //check if we want user first name and last name
 //use caption or content? 
 
 import React, { useState } from "react";
 import "./styles.css";
 import { func } from "prop-types";
-import * as MemePostService from "../../api/PostService";
+import * as PostService from "../../api/PostService";
 
-const MemePostForm = ({ getPostsAgain, user }) => {
-  const [img, setImg] = useState("");
+const PostForm = ({ getPostsAgain, user }) => {
+  const [memeImage, setFileName] = useState("");
   const [caption, setCaption] = useState(""); //caption or content? *****************
 
   const handleSubmit = async () => {
-    let newPost = { img, author: user._id, caption };
-    const res = await MemePostService.create(newPost);
+    let newPost = { memeImage, author: user._id, caption };
+    const res = await PostService.create(newPost);
 
     if (res.status === 201) {
-      setImg("");    //check to see img is an empty string? *************************
+      setFileName("");    //check to see memeImage is an empty string? *************************
       setCaption(""); //caption or content? ******************
       getPostsAgain();
   } else {
@@ -33,11 +33,11 @@ if (!user) {
 return (
   <div>
       <input
-          onChange={(e) => setImg(e.target.value)}
-          value={img}
+          onChange={(e) => setFileName(e.target.value[0])}
+          value={memeImage}
           type="text"  // blob? ********************************
-          name="img"
-          placeholder="Image Goes Here"
+          name="memeImage"
+          placeholder="Upload"
       />
         <p> 
           {user.firstName} {user.lastName}
@@ -55,8 +55,8 @@ return (
     );
 };
 
-MemePostForm.propTypes = {
+PostForm.propTypes = {
   getPostsAgain: func,
 };
 
-export default MemePostForm;
+export default PostForm;

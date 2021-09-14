@@ -1,10 +1,11 @@
 //Image Post router
 //Feel free to change whatever you want, move code into other files and/or completely delete this
+//Some may need to go in the comments controller? memePost controller?
 
 const router = require('express').Router();
 // const { memePost } = require('../controllers');
 const multer = require('multer');
-const { posts } = require('../controllers');
+// const { posts } = require('../controllers');
 
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -31,10 +32,10 @@ router.post("/", upload.single("memeImage"), (req, res) => {
   .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-// //Request Find Image by id
+// //Request Find Post by Id
 // router.get("/:id", (req,res) => {
-//   Images.findById(rteq.params.id)
-//   .then((image) => res.json(image))
+//   Posts.findById(req.params.id)
+//   .then((posts) => res.json(posts))
 //   .catch((err) => res.status(400).json(`Error: ${err}`));
 // });
 
@@ -42,7 +43,9 @@ router.post("/", upload.single("memeImage"), (req, res) => {
 router.put("/update/:id", upload.single("postName"), (req, res) => {
   posts.findbyId(req.params.id)
   .then((post) => {
-    post.author = 
+    post.author = req.body.author;
+    post.post = req.body.post;
+    post.memeImage = req.file.originalname;
   })
 })
 

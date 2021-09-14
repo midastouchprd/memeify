@@ -1,5 +1,4 @@
-//NOTES:
-//need to check type for edit memeImage text? blob? 
+//NOTES: 
 //use caption or content?
 //check all comments to match up with Jonathon Flores comments work
 
@@ -14,17 +13,21 @@ import "./styles.css";
 
 function Post({ id, getPostsAgain, memeImage, author, caption, postComments }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedImg, setImg] = useState(memeImage);
   const [editedAuthor, setAuthor] = useState(author);
   const [editedCaption, setCaption] = useState(caption); //caption or content? *************
   const [comments, setComments] = useState([]);
+  const [fileName, setFileName] = useState("");
+
+//   const onChangeFile = e => {
+//       setFileName(e.target.file[0]);
+//   }
 
   const handleEdit = async () => {
     setIsEditing(!isEditing);
     
     if (isEditing) {
         let editedPost = {
-            memeImage: editedImg,
+            memeImage: fileName,
             author: editedAuthor,
             caption: editedCaption, //caption or content? *********************
         };
@@ -55,8 +58,8 @@ return (
           {!isEditing && <h1>{memeImage}</h1>}
           {isEditing && (
               <input
-                  onChange={(e) => setImg(e.target.value)}
-                  value={editedImg}
+                  onChange={(e) => setFileName(e.target.value[0])}
+                  value={fileName}
                   type="text"  // blob?***************************************************
                   name="memeImage"
                   placeholder="Upload"
@@ -133,7 +136,7 @@ Post.propTypes = {
 };
 
 Post.defaultProps = {
-  author: "Memeify Me",
+  author: "Memeify Me", //change default author?
 };
 
 export default Post;
