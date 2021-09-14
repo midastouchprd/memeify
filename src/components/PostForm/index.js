@@ -1,7 +1,8 @@
 //NOTES:
 //check if we want user first name and last name
 //use caption or content or comments? 
-//This is probably the Post Form 
+//This is probably the Post Form?
+//Not sure if we need form action="/upload/photo"
 // -->MUST<-- have encType="multipart/form-data" in the form otherwise uploading an image WILL NOT WORK!
 
 import React, { useState } from 'react';
@@ -43,9 +44,9 @@ const PostForm = () => {
     <div className="img-Container">
       <h1>Add New Post</h1>
       <span className="caption">{caption}</span>
-      <form onSubmit={changeOnClick} encType="multipart/form-data"> 
+      <form onSubmit={changeOnClick} action="/upload/photo" encType="multipart/form-data"> 
         <div className="form-group">
-          <label htmlFor="author"> Author Name </label>
+          <label htmlFor="author"> User Name </label>
           <input
           type="text"
           value={author}
@@ -65,11 +66,12 @@ const PostForm = () => {
           ></textarea>
         </div>
         <div className="form-group">
-          <label htmlFor="file"> Choose Your Image </label>
+          <label htmlFor="file"> Choose Image </label>
           <input 
           type="file" 
           filename="postImage" 
-          className="form-control-file" 
+          className="form-control-file"
+          // accept="image/*" 
           onChange={onChangeFile}
           />
         </div>

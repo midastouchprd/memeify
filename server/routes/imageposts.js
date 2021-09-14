@@ -5,7 +5,6 @@
 const router = require('express').Router();
 // const { memePost } = require('../controllers');
 const multer = require('multer');
-// const { posts } = require('../controllers');
 
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
@@ -17,7 +16,6 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage: storage});
-
 
 //Request Add New Image
 router.post("/", upload.single("postImage"), (req, res) => {
