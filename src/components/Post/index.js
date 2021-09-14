@@ -1,6 +1,6 @@
 //NOTES: 
 //use caption or content?
-//check all comments to match up with Jonathon Flores comments work
+//check to match up with Jonathon Flores comments work
 
 import React, { useState, useEffect } from "react";
 import Likes from "../Likes";
@@ -18,9 +18,6 @@ function Post({ id, getPostsAgain, memeImage, author, caption, postComments }) {
   const [comments, setComments] = useState([]);
   const [fileName, setFileName] = useState("");
 
-//   const onChangeFile = e => {
-//       setFileName(e.target.file[0]);
-//   }
 
   const handleEdit = async () => {
     setIsEditing(!isEditing);
@@ -29,7 +26,7 @@ function Post({ id, getPostsAgain, memeImage, author, caption, postComments }) {
         let editedPost = {
             memeImage: fileName,
             author: editedAuthor,
-            caption: editedCaption, //caption or content? *********************
+            caption: editedCaption, //caption or content or comments? *********************
         };
         await PostService.update(id, editedPost);
         getPostsAgain();
