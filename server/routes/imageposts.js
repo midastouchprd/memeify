@@ -20,13 +20,13 @@ const upload = multer({storage: storage});
 
 
 //Request Add New Image
-router.post("/", upload.single("memeImage"), (req, res) => {
-  const newImagePost = new ImagePosts({
+router.post("/", upload.single("postImage"), (req, res) => {
+  const newPostImage = new PostImages({
     author: req.body.author,
-    memeImage: req.file.originalname,
+    postImage: req.file.originalname,
     caption: req.body.caption,
   });
-  newImagePost
+  newPostImage
   .save()
   .then(() => res.json("New Image Posted!"))
   .catch((err) => res.status(400).json(`Error: ${err}`));
@@ -45,7 +45,7 @@ router.put("/update/:id", upload.single("postName"), (req, res) => {
   .then((post) => {
     post.author = req.body.author;
     post.post = req.body.post;
-    post.memeImage = req.file.originalname;
+    post.postImage = req.file.originalname;
   })
 })
 

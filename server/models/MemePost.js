@@ -12,7 +12,7 @@ const commentSchema = new mongoose.Schema(
 const memePostSchema = new mongoose.Schema(
   {
     author: { type: Schema.Types.ObjectId, ref: 'User' },
-    memeImage: { type: String, required: true },
+    postImage: { type: String, required: true },
     caption: { type: String },
     comments: [commentSchema],
     date: { type: Date, default: Date.now },

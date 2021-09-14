@@ -13,7 +13,7 @@ const PostForm = () => {
   const [comments, setComments] = useState("");
   const [fileName, setFileName] = useState("");
 
-  const onChangeFile = e => {
+  const onChangeFile = (e) => {
     setFileName(e.target.file[0]);
   }
 
@@ -63,6 +63,15 @@ const PostForm = () => {
           rows="5"
           placeholder="Add a Caption"
           ></textarea>
+        </div>
+        <div className="form-group">
+          <label htmlFor="file"> Choose Your Image </label>
+          <input 
+          type="file" 
+          filename="postImage" 
+          className="form-control-file" 
+          onChange={onChangeFile}
+          />
         </div>
 
         <button type="submit" className="btn btn-primary"> Post! </button>
