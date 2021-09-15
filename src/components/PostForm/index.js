@@ -7,6 +7,8 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+import "./styles.css";
 
 const PostForm = () => {
   const [author, setAuthor] = useState("");
@@ -41,47 +43,63 @@ const PostForm = () => {
   };
 
   return (
-    <div className="img-Container">
-      <h1>Add New Post</h1>
+    <div className="img-container">
+      <h3> Add New Post Here: </h3>
       <span className="caption">{caption}</span>
       <form onSubmit={changeOnClick} action="/upload/photo" encType="multipart/form-data"> 
         <div className="form-group">
-          <label htmlFor="author"> User Name </label>
+          <label htmlFor="author" idName="user-label"> User Name : </label>
           <input
           type="text"
-          value={author}
+          value={ author }
           onChange={(e) => setAuthor(e.target.value)}
+          idName="user-box"
           className="form-control"
-          placeholder="User Name"
+          placeholder="Your User Name"
           />
-        </div>
+        </div><br></br>
+
         <div className="form-group">
-          <label htmlFor="caption"> Caption </label>
+          <label htmlFor="caption" idName="caption-label"> Caption : </label>
+          <br></br>
           <textarea
-          value={caption}
+          value={ caption }
           onChange={(e) => setCaption(e.target.value)}
+          idName="caption-box"
           className="form-control"
           rows="5"
-          placeholder="Add a Caption"
+          placeholder="Add a caption here..."
           ></textarea>
-        </div>
+        </div><br></br>
+
         <div className="form-group">
-          <label htmlFor="file"> Choose Image </label>
+          <label htmlFor="file" idName="choose-img-title"> Choose An Image to Memeify! </label>
+          <br></br>
           <input 
           type="file" 
           filename="postImage" 
           className="form-control-file"
+          idName="choose-file"
           accept="image/*" 
           onChange={onChangeFile}
           />
-        </div>
+        </div><br></br>
 
-        <button type="submit" className="btn btn-primary"> Post! </button>
+        <button type="submit" className="post-button"><HoverText> Post It ! </HoverText></button>
       </form>
     </div>
   );
 };
 
+const HoverText = styled.button`
+background-color: transparent;
+color: blue;
+border-color: transparent;
+  :hover {
+    color: red;
+    cursor: pointer;
+  }
+`
 export default PostForm;
 
 // import React, { useState } from "react";

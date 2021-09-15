@@ -11,10 +11,10 @@ import "./styles.css";
 // import Comment from "../Comment";
 // import CommentForm from "../CommentForm";
 
-function Post({ id, getPostsAgain, memeImage, author, caption, postComments }) {
+function Post({ id, getPostsAgain, postImage, author, caption, postComments }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedAuthor, setAuthor] = useState(author);
-  const [editedCaption, setCaption] = useState(caption); //caption or content? *************
+  const [editedCaption, setCaption] = useState(caption);
   const [comments, setComments] = useState([]);
   const [fileName, setFileName] = useState("");
 
@@ -24,9 +24,9 @@ function Post({ id, getPostsAgain, memeImage, author, caption, postComments }) {
     
     if (isEditing) {
         let editedPost = {
-            memeImage: fileName,
+            postImage: fileName,
             author: editedAuthor,
-            caption: editedCaption, //caption or content or comments? *********************
+            caption: editedCaption, 
         };
         await PostService.update(id, editedPost);
         getPostsAgain();
@@ -52,13 +52,13 @@ useEffect(() => {
 return (
   <div>
       <div>
-          {!isEditing && <h1>{memeImage}</h1>}
+          {!isEditing && <h1>{postImage}</h1>}
           {isEditing && (
               <input
                   onChange={(e) => setFileName(e.target.value[0])}
                   value={fileName}
-                  type="text"  // blob?***************************************************
-                  name="memeImage"
+                  type="file" 
+                  name="postImage"
                   placeholder="Upload"
               />
           )}
@@ -85,7 +85,7 @@ return (
                 {isEditing && (
                     <input
                         onChange={(e) => setcaption(e.target.value)}
-                        value={editedCaption} // caption or content? *************
+                        value={editedCaption} 
                         type="text"
                         name="caption"
                         placeholder="Caption"
@@ -125,7 +125,7 @@ return (
 
 Post.propTypes = {
   id: string.isRequired,
-  memeImage: string.isRequired,
+  postImage: string.isRequired,
   author: string.isRequired,
   caption: string.isRequired, // caption or content? ************
   postComments: array,
