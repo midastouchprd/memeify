@@ -7,6 +7,8 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+// import { func } from "prop-types";
+// import * as PostService from "../../api/PostService";
 import styled from 'styled-components';
 import "./styles.css";
 
@@ -53,7 +55,7 @@ const PostForm = () => {
           type="text"
           value={ author }
           onChange={(e) => setAuthor(e.target.value)}
-          idName="user-box"
+          id="user-box"
           className="form-control"
           placeholder="Your User Name"
           />
@@ -65,7 +67,7 @@ const PostForm = () => {
           <textarea
           value={ caption }
           onChange={(e) => setCaption(e.target.value)}
-          idName="caption-box"
+          id="caption-box"
           className="form-control"
           rows="5"
           placeholder="Add a caption here..."
@@ -73,14 +75,14 @@ const PostForm = () => {
         </div><br></br>
 
         <div className="form-group">
-          <label htmlFor="file" idName="choose-img-title"> Choose An Image to Memeify! </label>
+          <label htmlFor="file" className="choose-img-title"> Choose An Image to Memeify! </label>
           <br></br>
           <input 
           type="file" 
           filename="postImage" 
           className="form-control-file"
-          idName="choose-file"
-          accept="image/*" 
+          id="choose-file"
+          accept=".png, .jpg, .jpeg, .heic"
           onChange={onChangeFile}
           />
         </div><br></br>
@@ -101,11 +103,6 @@ border-color: transparent;
   }
 `
 export default PostForm;
-
-// import React, { useState } from "react";
-// import "./styles.css";
-// import { func } from "prop-types";
-// import * as PostService from "../../api/PostService";
 
 // const PostForm = ({ getPostsAgain, user }) => {
 //   const [memeImage, setFileName] = useState("");

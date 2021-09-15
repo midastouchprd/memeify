@@ -8,6 +8,7 @@ import Dislikes from "../Dislike";
 import * as PostService from "../../api/PostService";
 import { func, string, array } from "prop-types";
 import "./styles.css";
+import { Link } from "react-router-dom";
 // import Comment from "../Comment";
 // import CommentForm from "../CommentForm";
 
@@ -50,7 +51,20 @@ useEffect(() => {
 }, []);
 
 return (
-  <div>
+   {posts.map((post, key) => (
+      <div className="container" key={key}>
+          <img
+          src={`/uploads/${post.postImage}`}
+          alt="..."
+          style={{ width: "40%" }}
+          />
+          <Link to={{
+              pathname: `/post/${post._id}`,
+          }}
+          >
+              <h3>{post.author}</h3>
+  ))}
+  </Link>
       <div>
           {!isEditing && <h1>{postImage}</h1>}
           {isEditing && (

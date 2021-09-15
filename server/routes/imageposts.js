@@ -19,6 +19,7 @@ const upload = multer({storage: storage});
 
 //Request Add New Image
 router.post("/", upload.single("postImage"), (req, res) => {
+  console.log("");
   const newPostImage = new PostImages({
     author: req.body.author,
     postImage: req.file.originalname,
