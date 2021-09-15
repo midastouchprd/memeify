@@ -39,13 +39,14 @@ router.get("/:id", (req,res) => {
 });
 
 //Request Find Post Image by ID and Update Post Image
-router.put("/update/:id", upload.single("postName"), (req, res) => {
+router.put("/update/:id", upload.single("postImage"), (req, res) => {
   posts.findbyId(req.params.id)
   .then((post) => {
     post.author = req.body.author;
     post.post = req.body.post;
     post.postImage = req.file.originalname;
-  })
+  });
+  post
 })
 
 module.exports = router;
