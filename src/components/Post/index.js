@@ -51,8 +51,9 @@ useEffect(() => {
 }, []);
 
 return (
-   {posts.map((post, key) => (
-      <div className="container" key={key}>
+    <div>
+    {/* {posts.map((post, key) => ( */}
+      {/* <div className="container" key={key}>
           <img
           src={`/uploads/${post.postImage}`}
           alt="..."
@@ -64,7 +65,7 @@ return (
           >
               <h3>{post.author}</h3>
   ))}
-  </Link>
+  </Link> */}
       <div>
           {!isEditing && <h1>{postImage}</h1>}
           {isEditing && (
