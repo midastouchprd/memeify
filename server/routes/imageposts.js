@@ -19,7 +19,7 @@ const upload = multer({storage: storage});
 
 //Request Add New Image
 router.post("/", upload.single("postImage"), (req, res) => {
-  console.log("");
+  console.log("working?");
   const newPostImage = new PostImages({
     author: req.body.author,
     postImage: req.file.originalname,
@@ -31,12 +31,12 @@ router.post("/", upload.single("postImage"), (req, res) => {
   .catch((err) => res.status(400).json(`Error: ${err}`));
 });
 
-// //Request Find Post by Id
-// router.get("/:id", (req,res) => {
-//   Posts.findById(req.params.id)
-//   .then((posts) => res.json(posts))
-//   .catch((err) => res.status(400).json(`Error: ${err}`));
-// });
+//Request Find Post by Id
+router.get("/:id", (req,res) => {
+  Posts.findById(req.params.id)
+  .then((posts) => res.json(posts))
+  .catch((err) => res.status(400).json(`Error: ${err}`));
+});
 
 //Request Find Post Image by ID and Update Post Image
 router.put("/update/:id", upload.single("postName"), (req, res) => {

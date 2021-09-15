@@ -6,8 +6,14 @@
   
 }
 
-.post-button {
+.btn-post {
   background-color: transparent;
   border-color: transparent;
+  color:blue;
+}
+
+.btn-post:hover {
+  color: red;
+  cursor: pointer;
 }
 

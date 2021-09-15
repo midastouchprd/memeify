@@ -37,7 +37,7 @@ const PostForm = () => {
     setComments("");
 
     axios
-      .post("/posts/add", formData)
+      .post("http://localhost:5000/posts/add", formData)
       .then((res) => setComments(res.data))
       .catch((err) => {
         console.log(err);
@@ -50,7 +50,7 @@ const PostForm = () => {
       <span className="caption">{caption}</span>
       <form onSubmit={changeOnClick} action="/upload/photo" encType="multipart/form-data"> 
         <div className="form-group">
-          <label htmlFor="author" idName="user-label"> User Name : </label>
+          <label htmlFor="author" id="user-label"> User Name : </label>
           <input
           type="text"
           value={ author }
@@ -62,7 +62,7 @@ const PostForm = () => {
         </div><br></br>
 
         <div className="form-group">
-          <label htmlFor="caption" idName="caption-label"> Caption : </label>
+          <label htmlFor="caption" id="caption-label"> Caption : </label>
           <br></br>
           <textarea
           value={ caption }
@@ -87,21 +87,21 @@ const PostForm = () => {
           />
         </div><br></br>
 
-        <button type="submit" className="post-button"><HoverText> Post It ! </HoverText></button>
+        <button type="submit" className="btn-post"> Post It ! </button>
       </form>
     </div>
   );
 };
 
-const HoverText = styled.button`
-background-color: transparent;
-color: blue;
-border-color: transparent;
-  :hover {
-    color: red;
-    cursor: pointer;
-  }
-`
+// const HoverText = styled.button`
+// background-color: transparent;
+// color: blue;
+// border-color: transparent;
+//   :hover {
+//     color: red;
+//     cursor: pointer;
+//   }
+// `
 export default PostForm;
 
 // const PostForm = ({ getPostsAgain, user }) => {

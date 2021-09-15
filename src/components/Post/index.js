@@ -52,20 +52,15 @@ useEffect(() => {
 
 return (
     <div>
-    {/* {posts.map((post, key) => ( */}
-      {/* <div className="container" key={key}>
+    {/* {posts.map((post, key) => (
+      <div className="container" key={key}>
           <img
           src={`/uploads/${post.postImage}`}
           alt="..."
           style={{ width: "40%" }}
-          />
-          <Link to={{
-              pathname: `/post/${post._id}`,
-          }}
-          >
-              <h3>{post.author}</h3>
-  ))}
-  </Link> */}
+          /> */}
+    
+
       <div>
           {!isEditing && <h1>{postImage}</h1>}
           {isEditing && (
@@ -135,7 +130,7 @@ return (
             />
         </div>
     );
-
+    
 }
 
 Post.propTypes = {
