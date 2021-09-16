@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const db = mongoose.connection;
 const configs = {
   useNewUrlParser: true,
@@ -12,6 +13,7 @@ db.once('open', () => {
   console.log('Connected to the Meme Cloud');
 });
 
-// module.exports = {
-//   //    User: require("./User"),
-// };
+module.exports = {
+  User: require('./user'),
+  Post: require('./MemePost')
+};
