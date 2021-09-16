@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './style.css';
-import * as UserService from '../../api/UserService';
-import { setToken } from '../../utils/tokenservice';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import "./style.css";
+import * as UserService from "../../api/UserService";
+import { setToken } from "../../utils/tokenservice";
+import { useHistory } from "react-router-dom";
 
 const Signin = () => {
   const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,14 +22,14 @@ const Signin = () => {
 
     if (res.data.data) {
       const token = res.data.data.token;
-      console.log('FROM LOGIN FORM: ', token);
-      alert('logged in');
+      console.log("FROM LOGIN FORM: ", token);
+      alert("logged in");
       setToken(token);
-      setEmail('');
-      setPassword('');
-      history.push('/');
+      setEmail("");
+      setPassword("");
+      history.push("/profile");
     } else {
-      alert('Server Error enter valid creds');
+      alert("Server Error enter valid creds");
     }
   };
 
@@ -43,12 +43,18 @@ const Signin = () => {
           placeholder="Email Address"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
+          minlength="2"
+          maxlength="20"
+          required
         />
         <input
           className="signIn-password"
-          placeholder="Create Password"
+          placeholder="Password"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
+          type="password"
+          required
         />
         <button type="submit" className="signIn-button" onClick={handleSubmit}>
           Sign In
