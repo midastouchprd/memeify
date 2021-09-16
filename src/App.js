@@ -12,6 +12,7 @@ import './App.css';
 import Dislikes from './components/Dislike';
 import Likes from './components/Likes';
 import Nav from './components/Nav';
+import PostForm from './components/PostForm';
 
 // define our Welcome functional component
 // function Welcome() {
@@ -28,6 +29,10 @@ import Nav from './components/Nav';
 // }
     <div>
       <Nav />
+      <PostForm />
+      <h1>Welcome to Memeify!</h1>
+      <Likes />
+      <Dislikes />
       <h1>Welcome to Meme-ification!</h1>
       <Likes />
       <Dislikes /> 
@@ -35,6 +40,8 @@ import Nav from './components/Nav';
   );
 }
 
+export default Welcome;
+// npm i react-router-dom bcryptjs body-parser concurrently express is-empty jsonwebtoken mongoose passport passport-jwt validator cors multer
 // export default Welcome;
 // npm i react-router-dom bcryptjs body-parser concurrently express is-empty jsonwebtoken mongoose passport passport-jwt validator cors
 

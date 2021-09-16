@@ -1,4 +1,4 @@
-// Users Router
+// Memeposts Router
 const router = require('express').Router();
 const { createMemePost } = require('../controllers/MemePost');
 
