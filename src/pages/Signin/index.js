@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './style.css';
-import * as UserService from '../../api/UserService';
-import { setToken } from '../../utils/tokenservice';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from "react";
+import "./style.css";
+import * as UserService from "../../api/UserService";
+import { setToken } from "../../utils/tokenservice";
+import { useHistory } from "react-router-dom";
 
 const Signin = () => {
   const history = useHistory();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,14 +22,14 @@ const Signin = () => {
 
     if (res.data.data) {
       const token = res.data.data.token;
-      console.log('FROM LOGIN FORM: ', token);
-      alert('logged in');
+      console.log("FROM LOGIN FORM: ", token);
+      alert("logged in");
       setToken(token);
-      setEmail('');
-      setPassword('');
-      history.push('/profile');
+      setEmail("");
+      setPassword("");
+      history.push("/profile");
     } else {
-      alert('Server Error enter valid creds');
+      alert("Server Error enter valid creds");
     }
   };
 
@@ -49,7 +49,8 @@ const Signin = () => {
         />
         <input
           className="signIn-password"
-          placeholder="Enter Password"
+          placeholder="Password"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           type="password"
